@@ -1,3 +1,5 @@
 FROM java
-copy app.jar /app.jar
-java -jar app.jar
+COPY app.jar /app.jar
+CMD java -jar app.jar
+
+EXPOS 8080
