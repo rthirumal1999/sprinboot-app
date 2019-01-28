@@ -1,0 +1,16 @@
+version: "1"
+
+services:
+
+  springboot-app:
+    image: rthirumal1999/springbootapp:1.0.0
+    ports:
+      - 8081:8080
+    deploy:
+      mode: replicated
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+        delay: 30s
+        max_attempts: 3
+        window: 120s
